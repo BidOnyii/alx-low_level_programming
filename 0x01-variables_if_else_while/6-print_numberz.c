@@ -1,9 +1,18 @@
 #include <stdio.h>
 
 /**
- * main - program that prints all single digit numbers of base 10 starting from 0,
- * You are not allowed to use any variable of type char
- * You can only use the putchar f
+ * main - Prints numbers between 0 to 9.
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int i;
+
+	for (i = 48; i < 58; i++)
+	{
+		putchar(i);
+	}
 	putchar('\n');
 	return (0);
 }
