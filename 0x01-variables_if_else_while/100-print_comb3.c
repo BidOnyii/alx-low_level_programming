@@ -1,25 +1,37 @@
 #include <stdio.h>
 
 /**
- * main - Prints all possible combinations of single-digit numbers.
+ * main - main - Prints numbers between 00 to 89.
  *
  * Return: Always 0.
  */
 int main(void)
 {
-	int num;
+	int i, e;
 
-	for (num = 0; num <= 9; num++)
+	i = 48;
+	e = 48;
+
+	while (e < 58)
 	{
-		putchar((num % 10) + '0');
-		if (num == 9)
-			continue;
-
-		putchar(',');
-		putchar(' ');
+		i = 48;
+		while (i < 58)
+		{
+			if (e != i && e < i)
+			{
+				putchar(e);
+				putchar(i);
+				if (i == 57 && e == 56)
+				{
+					break;
+				}
+				putchar(',');
+				putchar(' ');
+			}
+			i++;
+		}
+		e++;
 	}
-
 	putchar('\n');
-
 	return (0);
 }
