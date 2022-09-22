@@ -31,5 +31,6 @@ char *leet(char *s)
 			leetCount++;
 		}
 		stringCount++;
-	}return (s);
+	}
+	return (s);
 }
