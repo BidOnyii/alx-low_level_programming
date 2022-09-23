@@ -1,39 +1,27 @@
 #include "main.h"
+
 /**
- *rot13 - encodes strings using rot13.
- *@s: pointer to string.
+ * rot13 - encodes a string into rot13
+ * @s: string to encode
  *
- *Return: pointer to encoded string.
+ * Return: address of s
  */
 char *rot13(char *s)
 {
-	int stringCount, rotation;
-	char r1[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
-		     'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
-		     'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
-		     'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
-		     'Z'};
-	char r2[] = {'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
-		     'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
-		     'm', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
-		     'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
-		     'M'};
+	int i, j;
+	char a[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char b[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	for (stringCount = 0; s[stringCount] != '\0'; stringCount++)
+	for (i = 0; *(s + i); i++)
 	{
-		for (rotation = 0; rotation < 53; rotation++)
+		for (j = 0; j < 52; j++)
 		{
-			if (r1[rotation] == s[stringCount])
+			if (a[j] == *(s + i))
 			{
-				s[stringCount] = r2[rotation];
+				*(s + i) = b[j];
 				break;
 			}
 		}
 	}
 	return (s);
 }
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
