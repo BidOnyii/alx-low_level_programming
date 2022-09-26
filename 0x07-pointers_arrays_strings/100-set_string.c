@@ -1,29 +1,17 @@
 #include "main.h"
 
 /**
- * _strpbrk - searches a string for any of a set of bytes.
+ * set_string - sets the value of a pointer to a char
  *
- * @s: first string.
+ * @s: source adress.
  *
- * @accept: second string.
+ * @to: target adress.
  *
- * Return: a pointer to the byte in s that matches one of the
- *
- * bytes in accept, or NULL if no such byte is found.
+ * Return: no return.
  *
  */
 
-char *_strpbrk(char *s, char *accept)
+void set_string(char **s, char *to)
 {
-	unsigned int i, j;
-
-	for (i = 0; *(s + i) != '\0'; i++)
-	{
-		for (j = 0; *(accept + j) != '\0'; j++)
-		{
-			if (*(s + i) == *(accept + j))
-				return (s + i);
-		}
-	}
-	return ('\0');
+	*s = to;
 }
